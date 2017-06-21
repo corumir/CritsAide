@@ -1,0 +1,632 @@
+{
+	"IP": "10.255.231.122",
+	"API_access":
+		{
+			"API_Key": "df718ad754306b18953fd9fed941fc1cea9f63ad",
+			"username": "vanguard",
+			"verify": true
+		},
+	"DB_access":
+		{
+			"mongo_port": 27017,
+			"mongo_user": "",
+			"mongo_pass": "",
+			"db_name": "crits"
+		},
+	"TLO": 
+		[
+			{
+				"TLO_name": "actor", 
+				"category": "actors",
+				"attributes": 
+					[
+						{
+							"name": "name",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "aliases",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "backdoor", 
+				"category": "backdoors",
+				"attributes": 
+					[
+						{
+							"name": "name",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "aliases",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "campaign", 
+				"category": "campaigns",
+				"attributes": 
+					[
+						{
+							"name": "name",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "aliases",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "domain", 
+				"category": "domains",
+				"attributes": 
+					[
+						{
+							"name": "domain",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						}
+					]
+			},
+			{
+				"TLO_name": "event", 
+				"category": "events",
+				"attributes": 
+					[
+						{
+							"name": "title",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "event_type",
+							"required": true,
+							"default": "Unknown",
+							"options":
+								[
+									"Application Compromise",
+									"Denial of Service",
+									"Distributed Denial of Service",
+									"Exploitation",
+									"Intel Sharing",
+									"Malicious Code",
+									"Phishing",
+									"Privileged Account Compromise",
+									"Scanning",
+									"Sensor Alery",
+									"Sniffing",
+									"Social Engineering",
+									"Spam",
+									"Strategic Web Compromise",
+									"Unauthorized Information Access",
+									"Unknown",
+									"Website Defacement"
+								]
+						},
+						{
+							"name": "date",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": true,
+							"default": "",
+							"options": []
+						}
+					]
+			},
+			{	"TLO_name": "exploit", 
+				"category": "exploits",
+				"attributes": 
+					[
+						{
+							"name": "name",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "cve",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "indicator", 
+				"category": "indicators",
+				"attributes": 
+					[
+						{
+							"name": "value",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "type",
+							"required": true,
+							"default": "API Key",
+							"options":
+								[
+									"API Key",
+									"AS Name",
+									"AS Number",
+									"Adjust Token",
+									"Bank account",
+									"Bitcoin account",
+									"CRX",
+									"Certificate Fingerprint",
+									"Certificate Name",
+									"Checksum CRC16",
+									"Command Line",
+									"Company name",
+									"Cookie Name",
+									"Country",
+									"Debug Path",
+									"Debug String",
+									"Destination Port",
+									"Device IO",
+									"Document from URL",
+									"Domain",
+									"Email Address",
+									"Email Address From",
+									"Email Address Sender",
+									"Email Boundary",
+									"Email HELO",
+									"Email Header Field",
+									"Email Message ID",
+									"Email Oringinating IP",
+									"Email Reply-To",
+									"Email Subject",
+									"Email X-Mailer",
+									"Email X-Originating IP",
+									"File Created",
+									"File Deleted",
+									"File Moved",
+									"File Name",
+									"File Opened",
+									"File Path",
+									"File Read",
+									"File Written",
+									"GET Parameter",
+									"HEX String",
+									"HTML ID",
+									"HTTP Request",
+									"HTTP Response Code",
+									"IMPHASH",
+									"IPv4 Address",
+									"IPv4 Subnet",
+									"IPv6 Address",
+									"IPv6 Subnet",
+									"Latitude",
+									"Launch Agent",
+									"Location",
+									"Longitude",
+									"MAC Address",
+									"MD5",
+									"Malware Name",
+									"Memory Alloc",
+									"Memory Protect",
+									"Memory Read",
+									"Memory Written",
+									"Mutant Created",
+									"Mutex",
+									"Name Server",
+									"Other File Operation",
+									"POST Data",
+									"Password",
+									"Password Salt",
+									"Payload Data",
+									"Payload Type",
+									"Pipe",
+									"Process Name",
+									"Protocol",
+									"Referer",
+									"Referer of Referer",
+									"Registrar",
+									"Registry Key",
+									"Registry Key Created",
+									"Registry Key Deleted",
+									"Registry Key Enumerated",
+									"Registry Key Monitored",
+									"Registry Key Opened",
+									"Registry Key Value Created",
+									"Registry Key Value Deleted",
+									"Registry Key Value Modified",
+									"Registry Key Value Queried",
+									"SHA1",
+									"SHA256",
+									"SMS Origin",
+									"SSDEEP",
+									"Service Name",
+									"Source Port",
+									"TS End",
+									"TS Start",
+									"Telephone",
+									"Time Created",
+									"Time Updated",
+									"Tracking ID",
+									"URI",
+									"User Agent",
+									"User ID",
+									"Victim IP",
+									"Volume Queried",
+									"WHOIS Address 1",
+									"WHOIS Address 2",
+									"WHOIS Name",
+									"WHOIS Registrant Email Address",
+									"WHOIS Telephone",
+									"Web Payload",
+									"Webstorage Key",
+									"XPI"
+								]
+						},
+						{
+							"name": "indicator_confidence",
+							"required": true,
+							"default": "unknown",
+							"options":
+							[
+								"unknown",
+								"benign",
+								"low",
+								"medium",
+								"high"
+							]
+						},
+						{
+							"name": "indicator_impact",
+							"required": true,
+							"default": "unknown",
+							"options":
+							[
+								"unknown",
+								"benign",
+								"low",
+								"medium",
+								"high"
+							]
+						},
+						{
+							"name": "threat_type",
+							"required": true,
+							"default": "Unknown",
+							"options":
+								[
+									"Bad Actor",
+									"Command Exec",
+									"Compromised Credential",
+									"Malicious Ad",
+									"Malicious Content",
+									"Malicious Domain",
+									"Malicious IP",
+									"Malicious Inject",
+									"Malicious URL",
+									"Malicious URL Chunk",
+									"Malware Artifacts",
+									"Malware Sample",
+									"Malware Victim",
+									"Proxy IP",
+									"SMS Spam",
+									"Sinkhole Event",
+									"Unknown",
+									"Victim IP Usage",
+									"Web Request",
+									"Whitelist Domain",
+									"Whitelist IP",
+									"Whitelist URL"
+								]
+						},
+						{
+							"name": "attack_type",
+							"required": true,
+							"default": "Unknown",
+							"options":
+								[
+									"Access Token Theft",
+									"Brute Force",
+									"Clickjacking",
+									"Email Spam",
+									"Fake Accounts",
+									"IP Infringement",
+									"Malicious App",
+									"Malware",
+									"Phishing",
+									"Self XSS",
+									"Share Baiting",
+									"Targeted",
+									"Unknown"
+								]
+						},
+						{
+							"name": "status",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "ip", 
+				"category": "ips",
+				"attributes": 
+					[
+						{
+							"name": "ip",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "",
+							"options": []
+						},
+						{
+							"name": "ip_type",
+							"required": true,
+							"default": "IPv4 Address",
+							"options":
+								[
+									"IPv4 Address",
+									"IPv4 Subnet",
+									"IPv6 Address",
+									"IPv6 Subnet"
+								]
+						}
+
+					]
+			},
+			{	"TLO_name": "raw_data", 
+				"category": "raw_data",
+				"attributes": 
+					[
+						{
+							"name": "title",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "CDI",
+							"options": []
+						},
+						{
+							"name": "upload_type",
+							"required": true,
+							"default": "file",
+							"options":
+								[
+									"file",
+									"metadata"
+								]
+						},
+						{
+							"name": "data_type",
+							"required": true,
+							"default": "Text",
+							"options":
+								[
+									"Text",
+									"JSON"
+								]
+						},
+						{
+							"name": "tool_name",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "tool_version",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "tool_details",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{
+				"TLO_name": "target", 
+				"category": "targets",
+				"attributes":
+					[
+						{
+							"name": "email_address",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Firstname",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Lastname",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Division",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Department",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Organization id",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Title",
+							"required": false,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "Note",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			}
+		],
+	"collections":
+		[
+			"actors",
+			"analysis_results",
+			"audit_log",
+			"backdoors",
+			"bucket_lists",
+			"campaigns",
+			"comments",
+			"config",
+			"dashboard",
+			"django_session",
+			"domains",
+			"effective_tlds",
+			"email",
+			"events",
+			"exploits",
+			"idb_actions",
+			"indicators",
+			"ips",
+			"locations",
+			"notifications",
+			"objects.chunks",
+			"objects.files",
+			"pcaps",
+			"pcaps.chunks",
+			"pcaps.files",
+			"raw_data",
+			"raw_data_types",
+			"roles",
+			"sample",
+			"sample.chunks",
+			"sample.files",
+			"saved_search",
+			"screenshots",
+			"signature_types",
+			"signatures",
+			"source_access",
+			"system.indexes",
+			"targets",
+			"users"
+		],
+	"campaigns":
+		[]
+}
+
