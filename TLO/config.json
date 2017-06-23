@@ -1,9 +1,9 @@
 {
-	"IP": "enter your IP address here",
+	"IP": "10.0.0.10",
 	"API_access":
 		{
-			"API_Key": "Enter API Key here",
-			"username": "enter USERName here",
+			"API_Key": "df718ad754306b18953fd9fed941fc1cea9f63ad",
+			"username": "vanguard",
 			"verify": true
 		},
 	"DB_access":
@@ -93,6 +93,39 @@
 							"required": false,
 							"default": null,
 							"options": null
+						},
+						{
+							"name": "description",
+							"required": false,
+							"default": null,
+							"options": null
+						}
+					]
+			},
+			{	"TLO_name": "certificate", 
+				"category": "certificates",
+				"attributes": 
+					[
+						{
+							"name": "Filename",
+							"required": true,
+							"default": null,
+							"options": null
+						},
+						{
+							"name": "source",
+							"required": true,
+							"default": "CDI",
+							"options": []
+						},
+						{
+							"name": "upload_type",
+							"required": true,
+							"default": "file",
+							"options":
+								[
+									"file"
+								]
 						},
 						{
 							"name": "description",
@@ -423,8 +456,14 @@
 						{
 							"name": "status",
 							"required": false,
-							"default": null,
-							"options": null
+							"default": "New",
+							"options":
+								[
+									"New",
+									"Analyzed",
+									"Deprecated",
+									"In Progress"
+								]
 						},
 						{
 							"name": "description",

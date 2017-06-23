@@ -25,15 +25,15 @@ class crits_API():
 
         return None
 
-    def upload_file(self, data, filepath):
+    def upload_file(self, data, filepath, category):
         data['username'] = self.username
         data['api_key'] = self.api_key
         
         with open(filepath, 'rb') as fdata:
-            r = requests.post('{0}/raw_data/'.format(self.url),
-                              data=data,
-                              files={'filedata': fdata},
-                              verify=self.verify)
+            r = requests.post('%s/%s/'%(self.url, category), 
+                    data=data, 
+                    files={'filedata': fdata}, 
+                    verify=self.verify)
             if r.status_code == 200:
                 result_data = json.loads(r.text)
                 return result_data

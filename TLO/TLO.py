@@ -4,6 +4,7 @@ import re
 import json
 import crits_API
 import crits_DB
+from auto_win import auto_win
 
 config_file = 'TLO/config.json'
 
@@ -64,47 +65,24 @@ class TLO():
 	@staticmethod
 	def add_TLO(typ):
 		add_typ = TLO.get_TLO(typ)
-		attr_req = []
-		attr_req_def = []
-		attr_nreq = []
 		
-		#get attributes for user specified TLO
+		info = []
 		for attr in add_typ['attributes']:
-			if (attr['required'] == True) and (attr['default'] == None):
-				attr_req.append(attr['name'])
-			elif (attr['required'] == True) and (attr['default'] != None):
-				attr_req_def.append(attr['name'])
-			elif attr['required'] == False:
-				attr_nreq.append(attr['name'])
-		print '\033[96m%s\033[0m ' % ' '.join(attr_req)+'\033[92m%s\033[0m ' % ' '.join(attr_req_def)+' '.join(attr_nreq)
-		string = raw_input('Enter Fields (ex. title=TITLE, source=CDI, etc):\n>> ')
-
-		#parse user input
-		comma = re.compile("^\s+|\s*,\s*|\s+$") #parse user input by comma and whitespace
-		equals = re.compile("\s*=\s*")
-		data = {}
-		elems = [x for x in comma.split(string) if x]
-		for elem in elems:
-			pair = [x for x in equals.split(elem) if x]
-			data[pair[0]] = pair[1]
-		
-		#handle CAPS problems
-		for key, value in data.iteritems():
-			d = TLO.get_attr(add_typ, key)
-			if d['default'] != None:
-				opt_check = [x for x in d['options'] if x.lower() == value.lower()]
-				if len(opt_check) > 0:
-					data[key] = opt_check[0]
+			info.append((attr['name'], attr['required'], attr['options']))
+		win = auto_win()
+		data = win.auto_complete(info)
 
 		#insert defaults for attributes not entered
-		for attr in attr_req_def:
-			if not (attr in data):
-				data[attr] = TLO.get_attr(add_typ, attr)['default']
+		for key, value in data.iteritems():
+			if value == '':
+				default = TLO.get_attr(add_typ, attr)['default']
+				if default != None:
+					data[key] = default
 
 		API_session = crits_API.crits_API(api_url, api_key, username, verify)
 		if ('upload_type' in data) and data['upload_type'] == 'file':
 			filepath = raw_input('Enter filepath:\n>> ')
-			upload = API_session.upload_file(data, filepath)
+			upload = API_session.upload_file(data, filepath, TLO.typ2cat(typ))
 
 		else:
 			if ('upload_type' in data) and data['upload_type'] == 'metadata':
