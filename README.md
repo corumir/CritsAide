@@ -8,7 +8,7 @@ Python scripts to interact with the CRITs API and database. As an introduction, 
 CRITs, of course.
 
 # Usage
-![test](https://github.com/corumir/CritsAide/blob/master/images/help.png)
+![help](https://github.com/corumir/CritsAide/blob/master/images/help.png)
 
 Help is pretty straight forward.  -a is how you add.  The syntax is -a, space, the top-level object (TLO), enter (i.e. the main IP indicator). It will prompt you for more information at that point.  It will then prompt you for more information.  
 
