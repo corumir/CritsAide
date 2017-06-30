@@ -8,32 +8,11 @@ Python scripts to interact with the CRITs API and database. As an introduction, 
 CRITs, of course.
 
 # Usage
-
-```python critsaide.py 
-
-usage: [-h] [-a TLO_type] [-g TLO_type NAME] [-d TLO_type NAME] [-r TLO_type NAME] [-c TLO_type NAME] [-q]
-
-This program interfaces with CRITS allowing the user to get, add, and delete
-TLOs as well as establish relationships between existing TLOs and adding TLOs
-to current Campaigns. Be sure to set the correct hosting IP under "IP" in the
-config.json file.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -a  [ ...], --add  [ ...]
-                        add crits TLO
-  -g  [ ...], --get  [ ...]
-                        get TLO from crits
-  -d  [ ...], --delete  [ ...]
-                        delete crits TLO
-  -r  [ ...], --relationship  [ ...]
-                        establish relationship between two existing TLOs
-  -c  [ ...], --campaign  [ ...]
-                        add TLO item to campaign
-  -q, --quit            Quit program
-```
+![test](https://github.com/corumir/CritsAide/blob/master/images/help.png)
 
 Help is pretty straight forward.  -a is how you add.  The syntax is -a, space, the top-level object (TLO), enter (i.e. the main IP indicator). It will prompt you for more information at that point.  It will then prompt you for more information.  
+
+Curses was recently implemented to help where input from a list was not user generated.  That massively assisted in cutting down on errors and misidentification.
 
 The idea behind this is to use the command-line interface to talk to CRITs and practically enter information.  It is NOT meant for a mass upload of information.  It is meant for an infinite response style of interaction, or where you are providing context and links to correlate individual pieces of data from the command line.  So, as a workflow, scripts are meant to add an item and then create relationships with other items that either you are going to add or that already exist.  For example, you might add a domain that you are interested in and then create a relationship from that domain to an IP address, and add WHOIS data to your domain, add ownership data to your domain, and so on.  
 
